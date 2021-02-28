@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+table.table-duty td {
+  height:80px;
+  vertical-align: middle;
+}
