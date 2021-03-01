@@ -42,3 +42,6 @@ table.table-duty td {
   height:80px;
   vertical-align: middle;
 }
+table.table-duty td.dimmer {
+  opacity: .3;
+}

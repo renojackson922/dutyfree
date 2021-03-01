@@ -9,7 +9,7 @@ function Calendar(props){
 
     let i = 1, j= 1, minus=0;
     const year = 2021;
-    const month = 2;
+    const month = 3;
     const day = 1;
 
     let strBuilder = '<table class=\'table table-bordered table-duty\'><tbody>'
@@ -18,12 +18,13 @@ function Calendar(props){
     let n = d.getDay()
     let lastDay = new Date(year, month, 0).getDate();
 
-    for(i=1; i<=5; i++){
+    for(i=1; i<=6; i++){
         strBuilder += '<tr>'
 
         for(j=1; j<=7; j++){
             let num = (7*(i-1)) + j;
             let numMinus =  num-minus;
+            console.log(`${num}-${minus}=${numMinus}`)
             let dCurr = new Date(`${year}-${month}-${numMinus}`);
             let nCurr = dCurr.getDay();
             let colorTemplate = "";
@@ -36,8 +37,8 @@ function Calendar(props){
             }
 
             if(num <= n){
-                minus++;
                 strBuilder += '<td></td>'
+                minus++;
             }
             else if(num > lastDay){
                 if(minus > 0){
@@ -50,6 +51,7 @@ function Calendar(props){
             else{
                 strBuilder += `<td ${colorTemplate}>${numMinus}</td>`
             }  
+
         }
         strBuilder += '</tr>'
     }
