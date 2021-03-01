@@ -37,11 +37,15 @@
   }
 }
 
-
 table.table-duty td {
-  height:80px;
+  background-color: #fff;
+  height:60px;
+  font-size:.85rem;
   vertical-align: middle;
 }
 table.table-duty td.dimmer {
-  opacity: .3;
+  opacity: 1;
+}
+table.table-duty td.today {
+  background-color: rgb(255, 234, 234) !important;
 }

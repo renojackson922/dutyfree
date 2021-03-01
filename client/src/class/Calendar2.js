@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import date from 'datejs'
 
+
 function Calendar2(props){
 
     const holidays = ['0101', '0211', '0212', '0213', '0301', '0505', '0519', '0606', '0815', '0920', '0921', '0922', '1003', '1009', '1225']
@@ -44,11 +45,12 @@ function Calendar2(props){
                     dayOver++;
                 }
                 else {
-                    colorTemplate = getColorTemplate((new Date(`${year}-${month}-${date}`)));
-                    strBuilder += `<td ${colorTemplate}>${date}</td>`
-                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                        //cell.classList.add("bg-info");
-                    } 
+                    colorTemplate = getColorTemplate((new Date(`${year}-${month}-${date}`)));   
+                    if (date === today.getDate() && year === today.getFullYear() && month === (today.getMonth()+1)) {
+                        strBuilder += `<td class="today" ${colorTemplate}>${date}</td>`
+                    } else{
+                        strBuilder += `<td ${colorTemplate}>${date}</td>`
+                    }
                     date++;
                 }
             }
